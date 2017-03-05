@@ -1,8 +1,8 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-import Tkinter
-import tkMessageBox
+#import Tkinter
+#import tkMessageBox
 
 class myClass:
   baseurl = ""
@@ -56,7 +56,7 @@ class myClass:
              break
         return str(ip)[4:17]
   def findIP(self):
-        quit()
+        #quit()
         self.launchDriver(self.baseurl)
         self.login(self.xpaths, self.username, self.password)
         self.selectTab("DHCP","- DHCP Client List")
@@ -64,17 +64,18 @@ class myClass:
         self.launchDriver("ftp://"+ip+":2121")
 
         
-def quit():
-    root.destroy()
-def buttonclick():
-    obj.findIP()
+#def quit():
+#    root.destroy()
+#def buttonclick():
+#    obj.findIP()
 
 obj = myClass()
-root = Tkinter.Tk()
+#root = Tkinter.Tk()
 
 obj.initialize()
-B = Tkinter.Button(root,text = "Click",command = buttonclick)
+obj.findIP()
+#B = Tkinter.Button(root,text = "Click",command = buttonclick)
 
-B.pack()
+#B.pack()
 
-root.mainloop()
+#root.mainloop()
